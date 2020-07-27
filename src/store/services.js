@@ -1,4 +1,10 @@
 import axios from "axios"
+import {} from "react-native-dotenv"
+const newPlugin271 = axios.create({
+  baseURL:
+    "https://crowdbotics-slack-dev.herokuapp.com/dashboard/app/8168/storyboard/9405/",
+  headers: { Accept: "application/json", "Content-Type": "application/json" }
+})
 const plugin13 = axios.create({
   baseURL:
     "https://crowdbotics-slack-dev.herokuapp.com/dashboard/app/7238/storyboard/8485/",
@@ -13,6 +19,9 @@ const mobile27API = axios.create({
   baseURL: "https://mobile-27-dev-8168.botics.co/",
   headers: { Accept: "application/json", "Content-Type": "application/json" }
 })
+function newplugin271_get__read() {
+  return newPlugin271.get(`/`)
+}
 function api_v1_customtext_list() {
   return mobile27API.get(`/api/v1/customtext/`)
 }
@@ -24,6 +33,24 @@ function api_v1_customtext_update(requestBody) {
 }
 function api_v1_customtext_partial_update(requestBody) {
   return mobile27API.patch(`/api/v1/customtext/{id}/`, requestBody)
+}
+function api_v1_ghgjfjhgfjhf_list() {
+  return mobile27API.get(`/api/v1/ghgjfjhgfjhf/`)
+}
+function api_v1_ghgjfjhgfjhf_create(requestBody) {
+  return mobile27API.post(`/api/v1/ghgjfjhgfjhf/`, requestBody)
+}
+function api_v1_ghgjfjhgfjhf_read() {
+  return mobile27API.get(`/api/v1/ghgjfjhgfjhf/{id}/`)
+}
+function api_v1_ghgjfjhgfjhf_update(requestBody) {
+  return mobile27API.put(`/api/v1/ghgjfjhgfjhf/{id}/`, requestBody)
+}
+function api_v1_ghgjfjhgfjhf_partial_update(requestBody) {
+  return mobile27API.patch(`/api/v1/ghgjfjhgfjhf/{id}/`, requestBody)
+}
+function api_v1_ghgjfjhgfjhf_delete() {
+  return mobile27API.delete(`/api/v1/ghgjfjhgfjhf/{id}/`)
 }
 function api_v1_homepage_list() {
   return mobile27API.get(`/api/v1/homepage/`)
@@ -77,10 +104,17 @@ function rest_auth_user_partial_update(requestBody) {
   return mobile27API.patch(`/rest-auth/user/`, requestBody)
 }
 export const apiService = {
+  newplugin271_get__read,
   api_v1_customtext_list,
   api_v1_customtext_read,
   api_v1_customtext_update,
   api_v1_customtext_partial_update,
+  api_v1_ghgjfjhgfjhf_list,
+  api_v1_ghgjfjhgfjhf_create,
+  api_v1_ghgjfjhgfjhf_read,
+  api_v1_ghgjfjhgfjhf_update,
+  api_v1_ghgjfjhgfjhf_partial_update,
+  api_v1_ghgjfjhgfjhf_delete,
   api_v1_homepage_list,
   api_v1_homepage_read,
   api_v1_homepage_update,

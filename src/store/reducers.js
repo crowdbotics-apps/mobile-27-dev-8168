@@ -4,6 +4,9 @@ const initialState = {}
 
 export default function apiReducer(state = initialState, action) {
   switch (action.type) {
+    case types.NEWPLUGIN271_GET__READ:
+    case types.NEWPLUGIN271_GET__READ_SUCCEEDED:
+    case types.NEWPLUGIN271_GET__READ_FAILED:
     case types.API_V1_CUSTOMTEXT_LIST:
     case types.API_V1_CUSTOMTEXT_LIST_SUCCEEDED:
     case types.API_V1_CUSTOMTEXT_LIST_FAILED:
@@ -16,6 +19,24 @@ export default function apiReducer(state = initialState, action) {
     case types.API_V1_CUSTOMTEXT_PARTIAL_UPDATE:
     case types.API_V1_CUSTOMTEXT_PARTIAL_UPDATE_SUCCEEDED:
     case types.API_V1_CUSTOMTEXT_PARTIAL_UPDATE_FAILED:
+    case types.API_V1_GHGJFJHGFJHF_LIST:
+    case types.API_V1_GHGJFJHGFJHF_LIST_SUCCEEDED:
+    case types.API_V1_GHGJFJHGFJHF_LIST_FAILED:
+    case types.API_V1_GHGJFJHGFJHF_CREATE:
+    case types.API_V1_GHGJFJHGFJHF_CREATE_SUCCEEDED:
+    case types.API_V1_GHGJFJHGFJHF_CREATE_FAILED:
+    case types.API_V1_GHGJFJHGFJHF_READ:
+    case types.API_V1_GHGJFJHGFJHF_READ_SUCCEEDED:
+    case types.API_V1_GHGJFJHGFJHF_READ_FAILED:
+    case types.API_V1_GHGJFJHGFJHF_UPDATE:
+    case types.API_V1_GHGJFJHGFJHF_UPDATE_SUCCEEDED:
+    case types.API_V1_GHGJFJHGFJHF_UPDATE_FAILED:
+    case types.API_V1_GHGJFJHGFJHF_PARTIAL_UPDATE:
+    case types.API_V1_GHGJFJHGFJHF_PARTIAL_UPDATE_SUCCEEDED:
+    case types.API_V1_GHGJFJHGFJHF_PARTIAL_UPDATE_FAILED:
+    case types.API_V1_GHGJFJHGFJHF_DELETE:
+    case types.API_V1_GHGJFJHGFJHF_DELETE_SUCCEEDED:
+    case types.API_V1_GHGJFJHGFJHF_DELETE_FAILED:
     case types.API_V1_HOMEPAGE_LIST:
     case types.API_V1_HOMEPAGE_LIST_SUCCEEDED:
     case types.API_V1_HOMEPAGE_LIST_FAILED:

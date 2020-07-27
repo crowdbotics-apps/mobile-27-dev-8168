@@ -1,6 +1,17 @@
 import { put, call, all, spawn } from "redux-saga/effects"
 import { apiService } from "./services"
 import * as types from "./constants"
+function* newplugin271_get__readWorker(action) {
+  try {
+    const result = yield call(apiService.newplugin271_get__read, action)
+    yield put(actions.newplugin271_get__readSucceeded(result))
+  } catch (err) {
+    yield put(actions.newplugin271_get__readFailed(err))
+  }
+}
+function* newplugin271_get__readWatcher() {
+  yield takeEvery(types.NEWPLUGIN271_GET__READ, newplugin271_get__readWorker)
+}
 function* api_v1_customtext_listWorker(action) {
   try {
     const result = yield call(apiService.api_v1_customtext_list, action)
@@ -52,6 +63,93 @@ function* api_v1_customtext_partial_updateWatcher() {
   yield takeEvery(
     types.API_V1_CUSTOMTEXT_PARTIAL_UPDATE,
     api_v1_customtext_partial_updateWorker
+  )
+}
+function* api_v1_ghgjfjhgfjhf_listWorker(action) {
+  try {
+    const result = yield call(apiService.api_v1_ghgjfjhgfjhf_list, action)
+    yield put(actions.api_v1_ghgjfjhgfjhf_listSucceeded(result))
+  } catch (err) {
+    yield put(actions.api_v1_ghgjfjhgfjhf_listFailed(err))
+  }
+}
+function* api_v1_ghgjfjhgfjhf_listWatcher() {
+  yield takeEvery(
+    types.API_V1_GHGJFJHGFJHF_LIST,
+    api_v1_ghgjfjhgfjhf_listWorker
+  )
+}
+function* api_v1_ghgjfjhgfjhf_createWorker(action) {
+  try {
+    const result = yield call(apiService.api_v1_ghgjfjhgfjhf_create, action)
+    yield put(actions.api_v1_ghgjfjhgfjhf_createSucceeded(result))
+  } catch (err) {
+    yield put(actions.api_v1_ghgjfjhgfjhf_createFailed(err))
+  }
+}
+function* api_v1_ghgjfjhgfjhf_createWatcher() {
+  yield takeEvery(
+    types.API_V1_GHGJFJHGFJHF_CREATE,
+    api_v1_ghgjfjhgfjhf_createWorker
+  )
+}
+function* api_v1_ghgjfjhgfjhf_readWorker(action) {
+  try {
+    const result = yield call(apiService.api_v1_ghgjfjhgfjhf_read, action)
+    yield put(actions.api_v1_ghgjfjhgfjhf_readSucceeded(result))
+  } catch (err) {
+    yield put(actions.api_v1_ghgjfjhgfjhf_readFailed(err))
+  }
+}
+function* api_v1_ghgjfjhgfjhf_readWatcher() {
+  yield takeEvery(
+    types.API_V1_GHGJFJHGFJHF_READ,
+    api_v1_ghgjfjhgfjhf_readWorker
+  )
+}
+function* api_v1_ghgjfjhgfjhf_updateWorker(action) {
+  try {
+    const result = yield call(apiService.api_v1_ghgjfjhgfjhf_update, action)
+    yield put(actions.api_v1_ghgjfjhgfjhf_updateSucceeded(result))
+  } catch (err) {
+    yield put(actions.api_v1_ghgjfjhgfjhf_updateFailed(err))
+  }
+}
+function* api_v1_ghgjfjhgfjhf_updateWatcher() {
+  yield takeEvery(
+    types.API_V1_GHGJFJHGFJHF_UPDATE,
+    api_v1_ghgjfjhgfjhf_updateWorker
+  )
+}
+function* api_v1_ghgjfjhgfjhf_partial_updateWorker(action) {
+  try {
+    const result = yield call(
+      apiService.api_v1_ghgjfjhgfjhf_partial_update,
+      action
+    )
+    yield put(actions.api_v1_ghgjfjhgfjhf_partial_updateSucceeded(result))
+  } catch (err) {
+    yield put(actions.api_v1_ghgjfjhgfjhf_partial_updateFailed(err))
+  }
+}
+function* api_v1_ghgjfjhgfjhf_partial_updateWatcher() {
+  yield takeEvery(
+    types.API_V1_GHGJFJHGFJHF_PARTIAL_UPDATE,
+    api_v1_ghgjfjhgfjhf_partial_updateWorker
+  )
+}
+function* api_v1_ghgjfjhgfjhf_deleteWorker(action) {
+  try {
+    const result = yield call(apiService.api_v1_ghgjfjhgfjhf_delete, action)
+    yield put(actions.api_v1_ghgjfjhgfjhf_deleteSucceeded(result))
+  } catch (err) {
+    yield put(actions.api_v1_ghgjfjhgfjhf_deleteFailed(err))
+  }
+}
+function* api_v1_ghgjfjhgfjhf_deleteWatcher() {
+  yield takeEvery(
+    types.API_V1_GHGJFJHGFJHF_DELETE,
+    api_v1_ghgjfjhgfjhf_deleteWorker
   )
 }
 function* api_v1_homepage_listWorker(action) {
@@ -278,10 +376,17 @@ function* rest_auth_user_partial_updateWatcher() {
 }
 export default function* rootSaga() {
   const sagas = [
+    newplugin271_get__readWatcher,
     api_v1_customtext_listWatcher,
     api_v1_customtext_readWatcher,
     api_v1_customtext_updateWatcher,
     api_v1_customtext_partial_updateWatcher,
+    api_v1_ghgjfjhgfjhf_listWatcher,
+    api_v1_ghgjfjhgfjhf_createWatcher,
+    api_v1_ghgjfjhgfjhf_readWatcher,
+    api_v1_ghgjfjhgfjhf_updateWatcher,
+    api_v1_ghgjfjhgfjhf_partial_updateWatcher,
+    api_v1_ghgjfjhgfjhf_deleteWatcher,
     api_v1_homepage_listWatcher,
     api_v1_homepage_readWatcher,
     api_v1_homepage_updateWatcher,
